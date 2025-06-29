@@ -13,11 +13,11 @@ class IndexController extends Controller
 
     function about()
     {
-        return view('about');
+        return view('about', ['pageTitle' => 'About']);
     }
 
     function contact()
     {
-        return view('contact');
+        return view('contact', ['pageTitle' => 'Contact']);
     }
 }
