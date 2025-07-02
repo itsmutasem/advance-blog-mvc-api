@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 //    use HasFactory;
-    protected $fillable = ['title', 'body', 'published']; // fields that can be updated
+    protected $fillable = ['title', 'body', 'author', 'published']; // fields that can be updated
     protected $guarded = ['id']; // cannot be updated/assigned (read only)
 }
