@@ -17,8 +17,8 @@ class PostController extends Controller
     function create()
     {
         $post = Post::create([
-            'title' => 'My first post',
-            'body' => 'This is my content',
+            'title' => 'My find Unique post',
+            'body' => 'This is to test find',
             'author' => 'Mutasem',
             'published' => true
         ]);
