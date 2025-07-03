@@ -14,6 +14,12 @@ class PostController extends Controller
         return view('post.index', ['posts' => $data, 'pageTitle' => 'Blog']);
     }
 
+    function show($id)
+    {
+        $post = Post::find($id);
+        return view('post.show', ['post' => $post]);
+    }
+
     function create()
     {
         $post = Post::create([
