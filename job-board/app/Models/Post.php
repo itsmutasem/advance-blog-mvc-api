@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    protected $table = 'post';
 //    use HasFactory;
     protected $fillable = ['title', 'body', 'author', 'published']; // fields that can be updated
     protected $guarded = ['id']; // cannot be updated/assigned (read only)
