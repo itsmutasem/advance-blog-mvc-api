@@ -18,8 +18,8 @@ class CommentController extends Controller
     {
         Comment::create([
             'author' => 'Mutasem',
-            'content' => 'This is a test comment',
-            'post_id' => 3
+            'content' => 'This is a another test comment',
+            'post_id' => 2
         ]);
         return redirect('/comments');
     }
