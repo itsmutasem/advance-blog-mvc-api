@@ -14,3 +14,6 @@ Route::get('/job', [JobController::class, 'index']);
 Route::get('/blog', [PostController::class, 'index']);
 Route::get('/blog/create', [PostController::class, 'create']);
 Route::get('/blog/{id}', [PostController::class, 'show']);
+
+Route::get('/comments', [\App\Http\Controllers\CommentController::class, 'index']);
+Route::get('/comments/create', [\App\Http\Controllers\CommentController::class, 'create']);
