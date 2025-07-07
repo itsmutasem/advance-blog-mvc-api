@@ -11,7 +11,7 @@ class CommentController extends Controller
     {
         // Eloquent ORM -> Get all data
         $data = Comment::all();
-        return view('comment.index', ['Comments' => $data, 'pageTitle' => 'Blog']);
+        return view('comment.index', ['comments' => $data, 'pageTitle' => 'Blog']);
     }
 
     function create()
@@ -21,6 +21,6 @@ class CommentController extends Controller
             'content' => 'This is a test comment',
             'post_id' => 3
         ]);
-        return redirect('/blog');
+        return redirect('/comments');
     }
 }
