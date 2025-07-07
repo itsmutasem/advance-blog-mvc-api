@@ -11,4 +11,9 @@ class Post extends Model
 //    use HasFactory;
     protected $fillable = ['title', 'body', 'author', 'published']; // fields that can be updated
     protected $guarded = ['id']; // cannot be updated/assigned (read only)
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
