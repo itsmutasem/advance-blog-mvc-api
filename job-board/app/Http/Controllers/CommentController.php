@@ -14,12 +14,6 @@ class CommentController extends Controller
         return view('comment.index', ['Comments' => $data, 'pageTitle' => 'Blog']);
     }
 
-    function show($id)
-    {
-        $comment = Comment::findOrFail($id);
-        return view('comment.show', ['comment' => $comment, 'pageTitle' => $comment->title]);
-    }
-
     function create()
     {
         Comment::create([
