@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('comment', function (Blueprint $table) {
-
+            $table->dropForeign('post_id');
+            $table->foreignId('post_id')->constrained('post')->cascadeOnDelete();
         });
     }
 
@@ -21,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('comment', function (Blueprint $table) {
+            $table->dropForeign('post_id');
+            $table->foreignId('post_id')->constrained('post');
+        });
     }
 };
