@@ -9,4 +9,11 @@ class Tag extends Model
     protected $table = 'tag';
     protected $fillable = ['title'];
     protected $guarded = ['id'];
+
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class);
+    }
 }
+
+
