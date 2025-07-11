@@ -18,6 +18,6 @@ class TagController extends Controller
         Tag::create([
             'title' => 'Software Engineering'
         ]);
-        return redirect('/blog');
+        return redirect('/tags');
     }
 }
