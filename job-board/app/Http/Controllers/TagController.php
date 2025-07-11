@@ -12,4 +12,12 @@ class TagController extends Controller
         $data = Tag::all();
         return view('tag.index', ['tags' => $data, 'pageTitle' => 'Tags']);
     }
+
+    function create()
+    {
+        Tag::create([
+            'title' => 'Software Engineering'
+        ]);
+        return redirect('/blog');
+    }
 }
