@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('post', function (Blueprint $table) {
-            $table->dropColumn('id'); // Destroy the data
+        Schema::dropIfExists('post');
+        Schema::create('post', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('title');
+            $table->string('body');
+            $table->boolean('published');
+            $table->timestamps();
         });
     }
 
@@ -22,9 +26,13 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('post', function (Blueprint $table) {
-            $table->dropColumn('id');
+        Schema::dropIfExists('post');
+        Schema::create('post', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('body');
+            $table->boolean('published');
+            $table->timestamps();
         });
     }
 };
