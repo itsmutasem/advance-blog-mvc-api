@@ -24,7 +24,7 @@ class TagController extends Controller
 
     function testManyToMany()
     {
-        $tag = Tag::find([1]);
+        $tag = Tag::find(1);
         $tag->posts()->attach([2]);
         return response()->json([
             'tag' => $tag->title,
