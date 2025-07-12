@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('use_uuid', function (Blueprint $table) {
-            //
+        Schema::table('post', function (Blueprint $table) {
+            $table->dropColumn('id'); // Destroy the data
+            $table->uuid('id')->primary();
         });
     }
 
@@ -21,8 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('use_uuid', function (Blueprint $table) {
-            //
+        Schema::table('post', function (Blueprint $table) {
+            $table->dropColumn('id');
+            $table->id();
         });
     }
 };
