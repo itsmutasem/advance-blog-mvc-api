@@ -31,8 +31,8 @@ class TagController extends Controller
         $post4->tags()->attach([1]);
 
         return response()->json([
-            'post2' => $post2->tags(),
-            'post4' => $post4->tags(),
+            'post2' => $post2->tags,
+            'post4' => $post4->tags,
         ]);
     }
 }
