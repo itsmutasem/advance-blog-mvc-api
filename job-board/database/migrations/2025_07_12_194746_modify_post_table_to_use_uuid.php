@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('body');
             $table->boolean('published');
+            $table->string('author')->after('title');
             $table->timestamps();
         });
     }
