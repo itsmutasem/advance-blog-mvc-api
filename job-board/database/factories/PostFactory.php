@@ -21,7 +21,7 @@ class PostFactory extends Factory
     {
         return [
             'id' => Str::uuid()->toString(),
-            'title' => $this->faker->title,
+            'title' => $this->faker->sentence,
             'body' => $this->faker->paragraphs( 3, true),
             'author' => $this->faker->name,
             'published' => $this->faker->boolean,
