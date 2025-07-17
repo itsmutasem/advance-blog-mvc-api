@@ -22,7 +22,7 @@ class CommentFactory extends Factory
     {
         return [
             'post_id' => Post::factory(),
-            'title' => $this->faker->sentence,
+            'content' => $this->faker->sentence,
             'author' => $this->faker->name,
         ];
     }
