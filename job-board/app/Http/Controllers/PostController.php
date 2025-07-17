@@ -10,7 +10,7 @@ class PostController extends Controller
     function index()
     {
         // Eloquent ORM -> Get all data
-        $data = Post::cursorPaginate(5);
+        $data = Post::cursorPaginate(10);
         return view('post.index', ['posts' => $data, 'pageTitle' => 'Blog']);
     }
 
