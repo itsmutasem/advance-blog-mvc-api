@@ -21,7 +21,7 @@ class CommentController extends Controller
 //            'content' => 'This is a another test comment',
 //            'post_id' => 3
 //        ]);
-        Comment::factory(5);
+        Comment::factory(5)->create();
         return redirect('/comments');
     }
 }
