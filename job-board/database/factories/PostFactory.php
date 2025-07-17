@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Psy\Util\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
@@ -17,7 +18,11 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id' => Str::uuid()->toString(),
+            'title' => $this->faker->title,
+            'body' => $this->faker->paragraph(3, true),
+            'author' => $this->faker->name,
+            'published' => $this->faker->boolean
         ];
     }
 }
