@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use HasFactory;
     use HasUuids;
     protected $primaryKey = 'id';
     protected $keyType = 'string'; // UUID - Universal Unique Identifier
