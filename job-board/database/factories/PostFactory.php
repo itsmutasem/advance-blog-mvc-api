@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Psy\Util\Str;
 
@@ -10,6 +11,7 @@ use Psy\Util\Str;
  */
 class PostFactory extends Factory
 {
+    Protected $model = Post::class;
     /**
      * Define the model's default state.
      *
