@@ -22,12 +22,13 @@ class PostController extends Controller
 
     function create()
     {
-        $post = Post::create([
-            'title' => 'My find Unique post',
-            'body' => 'This is to test find',
-            'author' => 'Mutasem',
-            'published' => true
-        ]);
+//        $post = Post::create([
+//            'title' => 'My find Unique post',
+//            'body' => 'This is to test find',
+//            'author' => 'Mutasem',
+//            'published' => true
+//        ]);
+        Post::factory(100)->create();
         return redirect('/blog');
     }
 

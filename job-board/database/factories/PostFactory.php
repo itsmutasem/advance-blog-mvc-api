@@ -4,14 +4,14 @@ namespace Database\Factories;
 
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Psy\Util\Str;
+use Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
 class PostFactory extends Factory
 {
-    Protected $model = Post::class;
+    protected $model = Post::class;
     /**
      * Define the model's default state.
      *
@@ -22,9 +22,9 @@ class PostFactory extends Factory
         return [
             'id' => Str::uuid()->toString(),
             'title' => $this->faker->title,
-            'body' => $this->faker->paragraph(3, true),
+            'body' => $this->faker->paragraphs( 3, true),
             'author' => $this->faker->name,
-            'published' => $this->faker->boolean
+            'published' => $this->faker->boolean,
         ];
     }
 }
