@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
     // Primary Key
+    use HasUuids;
     protected $primaryKey = 'id';
     protected $keyType = 'string'; // UUID - Universal Unique Identifier
     public $incrementing = false;

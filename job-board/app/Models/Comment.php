@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +10,7 @@ class Comment extends Model
 {
     use HasFactory;
     // Primary Key
+    use HasUuids;
     protected $primaryKey = 'id';
     protected $keyType = 'string'; // UUID - Universal Unique Identifier
     public $incrementing = false;
