@@ -10,6 +10,7 @@ class Post extends Model
 {
     use HasFactory;
     use HasUuids;
+    // Primary Key
     protected $primaryKey = 'id';
     protected $keyType = 'string'; // UUID - Universal Unique Identifier
     public $incrementing = false;

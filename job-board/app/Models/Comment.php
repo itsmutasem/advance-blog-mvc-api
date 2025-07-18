@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
+    // Primary Key
+    protected $primaryKey = 'id';
+    protected $keyType = 'string'; // UUID - Universal Unique Identifier
+    public $incrementing = false;
     protected $table = 'comment';
     protected $fillable = ['author', 'content', 'post_id'];
     protected $guarded = ['id'];
