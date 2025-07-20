@@ -29,6 +29,6 @@ class PostController extends Controller
     function delete($id)
     {
         Post::destroy($id);
-        return response("Successful Deleted", 203);
+        return response("Successful Deleted", 204);
     }
 }
