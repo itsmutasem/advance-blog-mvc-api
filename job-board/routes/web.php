@@ -19,7 +19,7 @@ Route::delete('/blog/{id}', [PostController::class, 'delete']);
 Route::get('/blog/{id}', [PostController::class, 'show']);
 
 Route::get('/comments', [CommentController::class, 'index']);
-Route::get('/comments/create', [CommentController::class, 'create']);
+Route::post('/comments', [CommentController::class, 'create']);
 
 Route::get('/tags', [TagController::class, 'index']);
 Route::get('/tags/create', [TagController::class, 'create']);
