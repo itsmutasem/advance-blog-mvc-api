@@ -16,12 +16,7 @@ class CommentController extends Controller
 
     function create()
     {
-//        Comment::create([
-//            'author' => 'Mutasem',
-//            'content' => 'This is a another test comment',
-//            'post_id' => 3
-//        ]);
         Comment::factory(5)->create();
-        return redirect('/comments');
+        return response(['message' =>"Successful Creation", 'createdCount' => 5], 201);
     }
 }
