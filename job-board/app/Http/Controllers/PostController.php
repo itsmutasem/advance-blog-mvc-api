@@ -32,8 +32,8 @@ class PostController extends Controller
         return redirect('/blog');
     }
 
-    function delete()
+    function delete($id)
     {
-        Post::destroy(3);
+        Post::destroy($id);
     }
 }
