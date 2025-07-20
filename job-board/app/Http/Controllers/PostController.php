@@ -28,8 +28,8 @@ class PostController extends Controller
 //            'author' => 'Mutasem',
 //            'published' => true
 //        ]);
-        Post::factory(100)->create();
-        return redirect('/blog');
+        Post::factory(10)->create();
+        return response("Successful Creation", 201);
     }
 
     function delete($id)
