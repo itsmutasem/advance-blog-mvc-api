@@ -22,12 +22,6 @@ class PostController extends Controller
 
     function create()
     {
-//        $post = Post::create([
-//            'title' => 'My find Unique post',
-//            'body' => 'This is to test find',
-//            'author' => 'Mutasem',
-//            'published' => true
-//        ]);
         Post::factory(10)->create();
         return response("Successful Creation", 201);
     }
@@ -35,5 +29,6 @@ class PostController extends Controller
     function delete($id)
     {
         Post::destroy($id);
+        return response("Successful Deleted", 203);
     }
 }

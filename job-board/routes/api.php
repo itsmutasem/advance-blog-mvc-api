@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/blog', [PostController::class, 'create']);
-Route::delete('/blog', [PostController::class, 'delete']);
+Route::delete('/blog/{id}', [PostController::class, 'delete']);
 
 Route::post('/comment', [CommentController::class, 'create']);
 
