@@ -46,7 +46,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('post.edit', ['pageTitle' => 'Blog - Edit Post']);
     }
 
     /**
