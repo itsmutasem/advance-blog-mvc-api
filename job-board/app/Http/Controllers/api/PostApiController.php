@@ -22,7 +22,8 @@ class PostApiController extends Controller
 
     public function show(string $id)
     {
-        
+        $data = Post::find($id);
+        return response($data, 200);
     }
 
     public function update(Request $request, string $id)
