@@ -12,7 +12,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $data = Tag::all();
+        return view('tag.index', ['tags' => $data, 'pageTitle' => 'Tags']);
     }
 
     /**
