@@ -11,6 +11,9 @@ class PostApiController extends Controller
     public function index()
     {
         $data = Post::paginate(15);
+        if (!$data) {
+            return response(['message' => 'Post not found!'], 404);
+        }
         return response($data, 200);
     }
 
@@ -23,12 +26,18 @@ class PostApiController extends Controller
     public function show(string $id)
     {
         $data = Post::find($id);
+        if (!$data) {
+            return response(['message' => 'Post not found!'], 404);
+        }
         return response($data, 200);
     }
 
     public function update(Request $request, string $id)
     {
         $data = Post::find($id);
+        if (!$data) {
+            return response(['message' => 'Post not found!'], 404);
+        }
         $data->update($request->all());
         return response($data, 200);
     }
@@ -36,6 +45,9 @@ class PostApiController extends Controller
     public function destroy(string $id)
     {
         $data = Post::find($id);
+        if (!$data) {
+            return response(['message' => 'Post not found!'], 404);
+        }
         $data->delete();
         return response(null, 204);
     }
