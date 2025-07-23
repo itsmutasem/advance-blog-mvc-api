@@ -23,6 +23,7 @@ Route::resource('comments', CommentController::class);
 //Route::get('/comments', [CommentController::class, 'index']);
 //Route::post('/comments', [CommentController::class, 'create']);
 
-Route::get('/tags', [TagController::class, 'index']);
+Route::resource('tags', TagController::class);
+//Route::get('/tags', [TagController::class, 'index']);
 //Route::post('/tags', [TagController::class, 'create']);
 Route::get('/tags/test-many', [TagController::class, 'testManyToMany']);
