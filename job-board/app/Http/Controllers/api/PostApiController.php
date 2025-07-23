@@ -16,13 +16,13 @@ class PostApiController extends Controller
 
     public function store(Request $request)
     {
-        $post = Post::create($request->all());
-        return response($post, 201);
+        $data = Post::create($request->all());
+        return response($data, 201);
     }
 
     public function show(string $id)
     {
-        //
+        
     }
 
     public function update(Request $request, string $id)
