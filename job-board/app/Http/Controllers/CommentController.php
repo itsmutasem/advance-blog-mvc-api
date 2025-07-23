@@ -21,7 +21,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        return view('comment.create', ['pageTitle' => 'Blog - Create New Comment']);
     }
 
     /**
