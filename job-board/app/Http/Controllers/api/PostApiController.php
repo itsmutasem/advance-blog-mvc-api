@@ -35,6 +35,8 @@ class PostApiController extends Controller
 
     public function destroy(string $id)
     {
-        //
+        $data = Post::find($id);
+        $data->delete();
+        return response(null, 204);
     }
 }
