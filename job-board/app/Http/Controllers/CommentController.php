@@ -12,7 +12,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $data = Comment::all();
+        return view('comment.index', ['comments' => $data, 'pageTitle' => 'Blog']);
     }
 
     /**
