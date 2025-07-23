@@ -19,7 +19,8 @@ Route::resource('blog', PostController::class);
 //Route::delete('/blog/{id}', [PostController::class, 'delete']);
 //Route::get('/blog/{id}', [PostController::class, 'show']);
 
-Route::get('/comments', [CommentController::class, 'index']);
+Route::resource('comments', CommentController::class);
+//Route::get('/comments', [CommentController::class, 'index']);
 //Route::post('/comments', [CommentController::class, 'create']);
 
 Route::get('/tags', [TagController::class, 'index']);
