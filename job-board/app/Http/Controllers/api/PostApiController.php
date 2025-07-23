@@ -16,7 +16,8 @@ class PostApiController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $post = Post::create($request->all());
+        return response($post, 201);
     }
 
     public function show(string $id)
