@@ -28,9 +28,10 @@ class TagController extends Controller
         //
     }
 
-    public function edit(Tag $tag)
+    public function edit(string $id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        return view('tag.edit', ['tag' => $tag, 'pageTitle' => 'Edit Tag']);
     }
 
     public function update(Request $request, Tag $tag)
