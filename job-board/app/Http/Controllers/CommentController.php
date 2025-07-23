@@ -23,10 +23,10 @@ class CommentController extends Controller
         //
     }
 
-    public function show(String $id)
+    public function show(string $id)
     {
         $comment = Comment::findOrFail($id);
-        return view('comment.show', ['comment' => $comment, 'pageTitle' => $comment->content]);
+        return view('comment.show', ['comment' => $comment, 'pageTitle' => "Comment - ".$comment->content]);
     }
 
     public function edit(Comment $comment)
