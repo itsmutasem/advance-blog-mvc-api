@@ -10,14 +10,4 @@ class IndexController extends Controller
     {
         return view('index');
     }
-
-    function about()
-    {
-        return view('about', ['pageTitle' => 'About']);
-    }
-
-    function contact()
-    {
-        return view('contact', ['pageTitle' => 'Contact']);
-    }
 }
