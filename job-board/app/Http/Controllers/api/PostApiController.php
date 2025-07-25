@@ -20,7 +20,7 @@ class PostApiController extends Controller
     public function store(Request $request)
     {
         $data = Post::create($request->all());
-        return response($data, 201);
+        return response(['data' => $data, 'message' => 'Post created successfully!'], 201);
     }
 
     public function show(string $id)
@@ -39,7 +39,7 @@ class PostApiController extends Controller
             return response(['message' => 'Post not found!'], 404);
         }
         $data->update($request->all());
-        return response($data, 200);
+        return response(['data' => $data, 'message' => 'Post updated successfully!'], 200);
     }
 
     public function destroy(string $id)
@@ -49,6 +49,6 @@ class PostApiController extends Controller
             return response(['message' => 'Post not found!'], 404);
         }
         $data->delete();
-        return response(null, 204);
+        return response(['message' => 'Post deleted successfully!'], 204);
     }
 }
