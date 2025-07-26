@@ -1,10 +1,9 @@
 <x-layout :title="$pageTitle">
-    <h2>Create New Post</h2>
     <form>
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base/7 font-semibold text-gray-900">Profile</h2>
-                <p class="mt-1 text-sm/6 text-gray-600">This information will be displayed publicly so be careful what you share.</p>
+                <h2 class="text-base/7 font-semibold text-gray-900">Create New Post</h2>
+                <p class="mt-1 text-sm/6 text-gray-600">Use this form to publish a new post to the blog.</p>
 
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
