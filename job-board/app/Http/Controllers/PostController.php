@@ -21,9 +21,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required',
-            'author' => 'required',
-            'body' => 'required'
+            
         ], [
             'title.required' => 'Mandatory field',
             'author.required' => 'Mandatory field',
