@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $data = Post::cursorPaginate(10);
+        $data = Post::latest()->cursorPaginate(10);
         return view('post.index', ['posts' => $data, 'pageTitle' => 'Blog']);
     }
 
