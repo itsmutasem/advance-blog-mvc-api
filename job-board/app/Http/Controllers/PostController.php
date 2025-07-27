@@ -21,7 +21,13 @@ class PostController extends Controller
 
     public function store(BlogPostRequest $request)
     {
-        print_r($request->all());
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->author = $request->input('author');
+        $post->body = $request->input('body');
+        $post->published = $request->has('published');
+
+        $post->save();
     }
 
     public function show(string $id)
