@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BlogPostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class PostController extends Controller
         return view('post.create', ['pageTitle' => 'Blog - Create New Post']);
     }
 
-    public function store(Request $request)
+    public function store(BlogPostRequest $request)
     {
         print_r($request->all());
     }
