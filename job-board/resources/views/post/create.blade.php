@@ -1,5 +1,6 @@
 <x-layout :title="$pageTitle">
-    <form>
+    <form method="POST" action="/blog">
+        @csrf
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
                 <h2 class="text-base/7 font-semibold text-gray-900">Create New Post</h2>
