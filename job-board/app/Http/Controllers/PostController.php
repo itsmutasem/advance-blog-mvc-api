@@ -29,7 +29,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect('/blog');
+        return redirect('/blog')->with('success', 'Post created successfully!');
     }
 
     public function show(string $id)
