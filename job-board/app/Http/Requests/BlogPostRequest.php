@@ -20,4 +20,12 @@ class BlogPostRequest extends FormRequest
         ];
     }
 
+    public function messages()
+    {
+        return [
+            'title.required' => 'Mandatory field',
+            'author.required' => 'Mandatory field',
+            'body.required' => 'Mandatory field'
+        ];
+    }
 }
