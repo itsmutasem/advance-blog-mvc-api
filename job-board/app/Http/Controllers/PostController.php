@@ -24,6 +24,10 @@ class PostController extends Controller
             'title' => 'required',
             'author' => 'required',
             'body' => 'required'
+        ], [
+            'title.required' => 'Mandatory field',
+            'author.required' => 'Mandatory field',
+            'body.required' => 'Mandatory field'
         ]);
         print_r($request->all());
     }
