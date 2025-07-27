@@ -12,6 +12,9 @@
                         <div class="mt-2">
                             <input id="title" type="text" name="title" autocomplete="title" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                         </div>
+                        @error('title')
+                            <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-3">
@@ -19,6 +22,9 @@
                         <div class="mt-2">
                             <input id="author" type="text" name="author" autocomplete="author" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                         </div>
+                        @error('author')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="col-span-full">
@@ -27,6 +33,9 @@
                             <textarea id="body" name="body" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
                         </div>
                         <p class="mt-3 text-sm/6 text-gray-600">Write a few sentences about the article.</p>
+                        @error('body')
+                        <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="col-span-full">
