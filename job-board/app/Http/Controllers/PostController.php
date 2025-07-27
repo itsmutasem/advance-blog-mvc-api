@@ -28,6 +28,8 @@ class PostController extends Controller
         $post->published = $request->has('published');
 
         $post->save();
+
+        return redirect('/blog');
     }
 
     public function show(string $id)
