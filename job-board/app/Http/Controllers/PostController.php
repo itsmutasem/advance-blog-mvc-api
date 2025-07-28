@@ -44,7 +44,7 @@ class PostController extends Controller
         return view('post.edit', ['post' => $post ,'pageTitle' => 'Blog - Edit Post: ' . $post->title]);
     }
 
-    public function update(Request $request, string $id)
+    public function update(BlogPostRequest $request, string $id)
     {
         $post = Post::findOrFail($id);
         $post->title = $request->input('title');
