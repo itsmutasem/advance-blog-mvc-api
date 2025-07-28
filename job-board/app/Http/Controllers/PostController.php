@@ -29,7 +29,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect('/blog')->with('success', 'Post created successfully!');
+        return redirect('/blog')->with('store', 'Post created successfully!');
     }
 
     public function show(string $id)
@@ -53,7 +53,7 @@ class PostController extends Controller
         $post->published = $request->input('published');
 
         $post->save();
-        return redirect('/blog')->with('success', 'Post updated successfully!');
+        return redirect('/blog')->with('update', 'Post updated successfully!');
     }
 
     public function destroy(string $id)

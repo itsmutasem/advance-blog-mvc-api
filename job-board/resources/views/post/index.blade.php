@@ -1,7 +1,11 @@
 <x-layout :title="$pageTitle">
-    @if(session('success'))
+    @if(session('store'))
         <div class="bg-green-50 px-3 py-2">
-            {{ session('success') }}
+            {{ session('store') }}
+        </div>
+    @elseif(session('update'))
+        <div class="bg-blue-50 px-3 py-2">
+            {{ session('update') }}
         </div>
     @endif
     <div class="mt-6 flex items-center justify-end gap-x-6">
