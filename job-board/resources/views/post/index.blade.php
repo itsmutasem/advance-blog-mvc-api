@@ -24,7 +24,7 @@
                     </div>
                     <div class="flex items-center gap-x-4 mt-4">
                         <a href="/blog/{{ $post->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
-                        <form method="POST" action="/blog/{{ $post->id }}">
+                        <form method="POST" action="/blog/{{ $post->id }}" onsubmit="return confirm('Are you sure, this cannot be reversed?')">
                             @csrf
                             @method('DELETE')
                             <button class="text-red-500 hover:text-gray-500">Delete</button>
