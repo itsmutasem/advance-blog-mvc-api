@@ -40,13 +40,20 @@ class PostController extends Controller
 
     public function edit(string $id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         return view('post.edit', ['post' => $post ,'pageTitle' => 'Blog - Edit Post: ' . $post->title]);
     }
 
     public function update(Request $request, string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->title = $request->input('title');
+        $post->author = $request->input('author');
+        $post->body = $request->input('body');
+        $post->published = $request->input('published');
+
+        $post->save();
+        return redirect('/blog')->with('success', 'Post updated successfully!');
     }
 
     public function destroy(string $id)
