@@ -19,8 +19,12 @@
                         <p class="text-1xl text-gray-600">{{ $post->author }}</p>
                     </div>
                     <div class="mt-4">
-                        <a href="blog/{{ $post->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
-                        <button class="text-red-500 hover:text-gray-500 ml-4">Delete</button>
+                        <a href="/blog/{{ $post->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
+                        <form method="POST" action="/blog/{{ $post->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="text-red-500 hover:text-gray-500 ml-4">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
