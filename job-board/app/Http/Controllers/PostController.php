@@ -40,7 +40,8 @@ class PostController extends Controller
 
     public function edit(string $id)
     {
-        return view('post.edit', ['pageTitle' => 'Blog - Edit Post']);
+        $post = Post::find($id);
+        return view('post.edit', ['post' => $post ,'pageTitle' => 'Blog - Edit Post']);
     }
 
     public function update(Request $request, string $id)
