@@ -7,6 +7,10 @@
         <div class="bg-blue-50 px-3 py-2">
             {{ session('update') }}
         </div>
+    @elseif(session('delete'))
+        <div class="bg-red-50 px-3 py-2">
+            {{ session('delete') }}
+        </div>
     @endif
     <div class="mt-6 flex items-center justify-end gap-x-6">
         <a href="/blog/create" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create</a>
@@ -18,12 +22,12 @@
                         <h2 class="text-2xl">{{ $post->title }}</h2>
                         <p class="text-1xl text-gray-600">{{ $post->author }}</p>
                     </div>
-                    <div class="mt-4">
+                    <div class="flex items-center gap-x-4 mt-4">
                         <a href="/blog/{{ $post->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
                         <form method="POST" action="/blog/{{ $post->id }}">
                             @csrf
                             @method('DELETE')
-                            <button class="text-red-500 hover:text-gray-500 ml-4">Delete</button>
+                            <button class="text-red-500 hover:text-gray-500">Delete</button>
                         </form>
                     </div>
                 </div>
