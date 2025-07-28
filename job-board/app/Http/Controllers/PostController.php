@@ -50,7 +50,7 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->author = $request->input('author');
         $post->body = $request->input('body');
-        $post->published = $request->input('published');
+        $post->published = $request->has('published');
 
         $post->save();
         return redirect('/blog')->with('update', 'Post updated successfully!');
