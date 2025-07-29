@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SignupRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class AuthController extends Controller
         return view('auth.signup', ['pageTitle' => 'Sing Up']);
     }
 
-    public function signup(Request $request)
+    public function signup(SignupRequest $request)
     {
         $user = new User();
         $user->name = $request->input('name');
