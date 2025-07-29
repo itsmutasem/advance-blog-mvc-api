@@ -64,6 +64,9 @@
                     <div class="sm:col-span-3">
                         <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $comment->content }}</dd>
                         <dt class="text-sm/6 font-medium text-gray-500">— {{ $comment->author }}</dt>
+                        <div class="flex items-center justify-end gap-x-4">
+                            <a href="/comments/{{ $comment->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
+                        </div>
                     </div>
                 </dl>
             </div>
