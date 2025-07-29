@@ -19,29 +19,38 @@
                 <div>
                     <label for="email" class="block text-sm/6 font-medium text-gray-900">Name</label>
                     <div class="mt-2">
-                        <input id="name" type="text" name="name" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                        <input id="name" type="text" name="name" value="{{ old('name') }}" required class="{{ $errors->has('name') ? 'outline-red-500' : 'outline-gray-300' }} block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                     </div>
+                    @error('name')
+                        <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div>
                     <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
                     <div class="mt-2">
-                        <input id="email" type="email" name="email" required autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                        <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" class="{{ $errors->has('email') ? 'outline-red-500' : 'outline-gray-300' }} block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                     </div>
+                    @error('email')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div>
                     <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
                     <div class="mt-2">
-                        <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                        <input id="password" type="password" name="password" required autocomplete="current-password" class="{{ $errors->has('password') ? 'outline-red-500' : 'outline-gray-300' }} block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                     </div>
                 </div>
 
                 <div>
                     <label for="password_confirmation" class="block text-sm/6 font-medium text-gray-900">Confirm password</label>
                     <div class="mt-2">
-                        <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="password_confirmation" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
+                        <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="password_confirmation" class="{{ $errors->has('password') ? 'outline-red-500' : 'outline-gray-300' }} block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                     </div>
+                    @error('password')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div>
