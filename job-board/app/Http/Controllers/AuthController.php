@@ -13,9 +13,9 @@ class AuthController extends Controller
         return view('auth.signup', ['pageTitle' => 'Sing Up']);
     }
 
-    public function signup()
+    public function signup(Request $request)
     {
-
+        print_r($request->all());
     }
 
     public function showLoginForm()
