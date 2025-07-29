@@ -28,7 +28,7 @@
             <div class="bg-white rounded-lg shadow-md p-6 mb-6 border border-gray-200 mt-2">
                 <div class="flex justify-between items-center">
                     <div>
-                        <h2 class="text-2xl">{{ $post->title }}</h2>
+                        <a href="/blog/{{ $post->id }}"><h2 class="text-2xl">{{ $post->title }}</h2></a>
                         <p class="text-1xl text-gray-600">{{ $post->author }}</p>
                     </div>
                     <div class="flex items-center gap-x-4 mt-4">
