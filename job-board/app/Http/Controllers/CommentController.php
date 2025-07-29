@@ -11,13 +11,12 @@ class CommentController extends Controller
 {
     public function index()
     {
-        $data = Comment::all();
-        return view('comment.index', ['comments' => $data, 'pageTitle' => 'Blog']);
+        return redirect('/blog');
     }
 
     public function create()
     {
-        return view('comment.create', ['pageTitle' => 'Blog - Create New Comment']);
+        return redirect('/blog');
     }
 
     public function store(BlogCommentRequest $request)
@@ -37,8 +36,7 @@ class CommentController extends Controller
 
     public function show(string $id)
     {
-        $comment = Comment::findOrFail($id);
-        return view('comment.show', ['comment' => $comment, 'pageTitle' => "Comment - ".$comment->content]);
+        return redirect('/blog');
     }
 
     public function edit(string $id)
