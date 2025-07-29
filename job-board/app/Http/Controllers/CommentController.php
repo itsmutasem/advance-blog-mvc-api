@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BlogCommentRequest;
+use App\Http\Requests\BlogPostRequest;
 use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -45,9 +46,17 @@ class CommentController extends Controller
         return view('comment.edit', ['comment' => $comment, 'pageTitle' => 'Blog - Edit Comment']);
     }
 
-    public function update(Request $request, Comment $comment)
+    public function update(BlogCommentRequest $request, string $id)
     {
-        //
+        $post = Post::findOrFail($request->input('post_id'));
+
+        $comment = Comment::findOrFail($id);
+        $comment->author = $request->input('author');
+        $comment->content = $request->input('content');
+        $comment->post_id = $request->input('post_id');
+
+        $comment->save();
+        return redirect("/blog/{$post->id}")->with('update', 'Comment updated successfully!');
     }
 
     public function destroy(Comment $comment)
