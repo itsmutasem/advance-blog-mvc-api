@@ -14,8 +14,8 @@ class BlogCommentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'author' => 'required',
-            'content' => 'required',
+            'author' => 'required|string',
+            'content' => 'required|string',
         ];
     }
 
