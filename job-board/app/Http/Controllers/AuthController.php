@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -15,7 +16,14 @@ class AuthController extends Controller
 
     public function signup(Request $request)
     {
-        print_r($request->all());
+        $user = new User();
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+
+        $user->save();
+
+        return redirect('/');
     }
 
     public function showLoginForm()
