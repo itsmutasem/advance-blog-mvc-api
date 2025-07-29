@@ -10,7 +10,7 @@ class AuthController extends Controller
 
     public function showSignupForm()
     {
-        return view('auth.signup');
+        return view('auth.signup', ['pageTitle' => 'Sing Up']);
     }
 
     public function signup()
@@ -20,7 +20,7 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth.login');
+        return view('auth.login', ['pageTitle' => 'Login']);
     }
 
     public function login()
