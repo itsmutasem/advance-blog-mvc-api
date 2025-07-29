@@ -59,8 +59,10 @@ class CommentController extends Controller
         return redirect("/blog/{$post->id}")->with('update', 'Comment updated successfully!');
     }
 
-    public function destroy(Comment $comment)
+    public function destroy(string $id)
     {
-        //
+        $comment = Comment::findOrFail($id);
+        $comment->delete();
+        return redirect("blog/{$comment->post->id}")->with('delete', 'Comment deleted successfully!');
     }
 }
