@@ -36,7 +36,11 @@ This example requires updating your template:
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         @auth
-                            <span>{{ Auth::user()->name }}</span>
+                            <span class="text-white mr-4">{{ Auth::user()->name }}</span>
+                            <form method="POST" action="/logout">
+                                @csrf
+                                <button type="submit" class="text-gray-400 hover:text-red-500">Logout</button>
+                            </form>
                         @else
                             <a href="/signup" class="text-gray-400 hover:text-white px-2">Signup</a>
                             <a href="/login" class="text-gray-400 hover:text-white px-2">Login</a>
