@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="col-span-full">
-                                <label for="content" class="block text-sm font-medium text-gray-900">Comment</label>
+                                <label for="content" class="block text-sm font-medium text-gray-900">Your Comment</label>
                                 <div class="mt-1">
                                     <textarea id="content" name="content" rows="3" class=" {{ $errors->has('content') ? 'outline-red-500' : 'outline-gray-300' }} block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                                         {{ old('content') }}
@@ -49,7 +49,7 @@
 
                         <div class="mt-4 flex items-center justify-end gap-x-4">
                             <button type="submit" class="rounded-md bg-indigo-600 px-4 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                                Save
+                                Add comment
                             </button>
                         </div>
                     </div>
