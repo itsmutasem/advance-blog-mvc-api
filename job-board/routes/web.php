@@ -25,3 +25,5 @@ Route::get('/tags/test-many', [TagController::class, 'testManyToMany']);
 
 Route::get('/signup', [AuthController::class, 'showSignupForm']);
 Route::get('/login', [AuthController::class, 'showLoginForm']);
+Route::post('/signup', [AuthController::class, 'signup']);
+Route::post('/login', [AuthController::class, 'login']);
