@@ -18,4 +18,12 @@ class BlogCommentRequest extends FormRequest
             'content' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+          'author.required' => 'Mandatory field',
+          'content.required' => 'Mandatory field',
+        ];
+    }
 }
