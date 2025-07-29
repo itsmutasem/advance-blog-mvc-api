@@ -31,8 +31,8 @@ class CommentController extends Controller
         $comment->post_id = $request->input('post_id');
 
         $comment->save();
-        
-        return redirect("/blog/{$post->id}")->with('create', 'Comment added successfully!');
+
+        return redirect("/blog/{$post->id}")->with('store', 'Comment added successfully!');
     }
 
     public function show(string $id)

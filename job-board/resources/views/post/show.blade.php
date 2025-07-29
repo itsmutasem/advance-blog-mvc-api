@@ -5,6 +5,14 @@
     </div>
     <div>
         <div class="px-4 sm:px-0 mt-5">
+            @if(session('store'))
+                <div class="flex items-center bg-green-100 border border-green-300 text-green-800 text-sm rounded-md px-4 py-3 mb-4" role="alert">
+                    <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="font-medium">Success:</span> <span class="ml-1">{{ session('store') }}</span>
+                </div>
+            @endif
             <form method="POST" action="/comments">
                 @csrf
                 <input type="hidden" name="post_id" value="{{ $post->id }}">
