@@ -7,7 +7,7 @@
         <div class="px-4 sm:px-0 mt-5">
             <form method="POST" action="/comments">
                 @csrf
-                <input type="hidden" name="post_id" value="{{ $post->id }}">    
+                <input type="hidden" name="post_id" value="{{ $post->id }}">
                 <div class="space-y-6 bg-white rounded-lg shadow-md px-6 py-4 mb-4 border border-gray-200">
                     <h2 class="text-base font-semibold text-gray-900">New comment</h2>
 
