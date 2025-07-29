@@ -16,17 +16,23 @@
                             <div class="sm:col-span-6">
                                 <label for="author" class="block text-sm font-medium text-gray-900">Your Name</label>
                                 <div class="mt-1">
-                                    <div class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-                                        <input id="author" type="text" name="author" class="block min-w-0 grow py-1 pr-3 pl-1 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none" />
+                                    <div class="mt-1">
+                                        <input id="author" type="text" name="author" class=" {{ $errors->has('author') ? 'outline-red-500' : 'outline-gray-300' }} block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
                                     </div>
+                                    @error('author')
+                                        <span class="text-red-500">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="col-span-full">
                                 <label for="content" class="block text-sm font-medium text-gray-900">Comment</label>
                                 <div class="mt-1">
-                                    <textarea id="content" name="content" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-sm text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
+                                    <textarea id="content" name="content" rows="3" class=" {{ $errors->has('content') ? 'outline-red-500' : 'outline-gray-300' }} block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
                                 </div>
+                                @error('content')
+                                <span class="text-red-500">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
