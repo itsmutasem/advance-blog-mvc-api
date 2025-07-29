@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -34,9 +35,9 @@ class AuthController extends Controller
         return view('auth.login', ['pageTitle' => 'Login']);
     }
 
-    public function login()
+    public function login(LoginRequest $request)
     {
-
+        
     }
 
     public function logout()
