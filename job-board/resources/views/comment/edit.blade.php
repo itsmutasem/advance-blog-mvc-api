@@ -4,6 +4,7 @@
             <form method="POST" action="/comments/{{ $comment->id }}">
                 @csrf
                 @method('PUT')
+                <input type="hidden" name="post_id" value="{{ $comment->post->id }}" />
                 <div class="space-y-6 bg-white rounded-lg shadow-md px-6 py-4 mb-4 border border-gray-200">
                     <h2 class="text-base font-semibold text-gray-900">Edit comment: {{ $comment->content }}</h2>
                     <div>
