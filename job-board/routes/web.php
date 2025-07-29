@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\JobController;
@@ -21,3 +22,6 @@ Route::resource('comments', CommentController::class);
 
 Route::resource('tags', TagController::class);
 Route::get('/tags/test-many', [TagController::class, 'testManyToMany']);
+
+Route::get('/signup', [AuthController::class, 'showSignupForm']);
+Route::get('/login', [AuthController::class, 'showLoginForm']);
