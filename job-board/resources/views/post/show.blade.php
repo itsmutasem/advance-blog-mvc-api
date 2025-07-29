@@ -80,6 +80,11 @@
                         <dt class="text-sm/6 font-medium text-gray-500">— {{ $comment->author }}</dt>
                         <div class="flex items-center justify-end gap-x-4">
                             <a href="/comments/{{ $comment->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
+                            <form method="POST" action="/comment/{{ $comment->id }}" onsubmit="return confirm('Are you sure, this cannot be reversed?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="text-red-500 hover:text-gray-500">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </dl>
