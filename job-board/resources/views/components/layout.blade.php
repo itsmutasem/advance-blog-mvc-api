@@ -35,8 +35,12 @@ This example requires updating your template:
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <a href="/signup" class="text-gray-400 hover:text-white px-2">Signup</a>
-                        <a href="/login" class="text-gray-400 hover:text-white px-2">Login</a>
+                        @auth
+                            <span>{{ Auth::user()->name }}</span>
+                        @else
+                            <a href="/signup" class="text-gray-400 hover:text-white px-2">Signup</a>
+                            <a href="/login" class="text-gray-400 hover:text-white px-2">Login</a>
+                        @endauth
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
