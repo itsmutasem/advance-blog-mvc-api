@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 // Public Routes
 Route::get('/', IndexController::class);
-Route::get('/about', AboutController::class);
+
 Route::get('/contact', ContactController::class);
 
 Route::get('/job', [JobController::class, 'index']);
@@ -30,4 +30,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::resource('blog', PostController::class);
     Route::resource('comments', CommentController::class);
+});
+
+Route::middleware('onlyMe')->group(function () {
+    Route::get('/about', AboutController::class);
 });
