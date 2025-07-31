@@ -25,8 +25,8 @@ Route::resource('comments', CommentController::class);
 Route::resource('tags', TagController::class);
 Route::get('/tags/test-many', [TagController::class, 'testManyToMany']);
 
-Route::get('/signup', [AuthController::class, 'showSignupForm']);
-Route::get('/login', [AuthController::class, 'showLoginForm']);
+Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
