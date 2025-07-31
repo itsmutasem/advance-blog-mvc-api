@@ -16,7 +16,9 @@ Route::get('/contact', ContactController::class);
 
 Route::get('/job', [JobController::class, 'index']);
 
-Route::resource('blog', PostController::class);
+Route::middleware('auth')->group(function () {
+    Route::resource('blog', PostController::class);
+});
 
 Route::resource('comments', CommentController::class);
 
