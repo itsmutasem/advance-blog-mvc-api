@@ -18,9 +18,8 @@ Route::get('/job', [JobController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::resource('blog', PostController::class);
+    Route::resource('comments', CommentController::class);
 });
-
-Route::resource('comments', CommentController::class);
 
 Route::resource('tags', TagController::class);
 Route::get('/tags/test-many', [TagController::class, 'testManyToMany']);
