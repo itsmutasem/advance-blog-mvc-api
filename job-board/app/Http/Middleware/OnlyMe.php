@@ -21,7 +21,7 @@ class OnlyMe
             {
                 return $next($request);
             }
-            return response(['message' => "'Access is not proper!"], 403);
+            return response(['message' => 'Access is not proper!'], 403);
         }
         return redirect('/login');
     }
