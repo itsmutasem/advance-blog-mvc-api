@@ -142,11 +142,20 @@
       <path value="$PROJECT_DIR$/job-board/vendor/composer" />
       <path value="$PROJECT_DIR$/job-board/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/job-board/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/job-board/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/job-board/vendor/stella-maris/clock" />
+      <path value="$PROJECT_DIR$/job-board/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/job-board/vendor/lcobucci/jwt" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/job-board/phpunit.xml" custom_loader_path="$PROJECT_DIR$/job-board/vendor/autoload.php" paratest_path="$PROJECT_DIR$/job-board/vendor/bin/paratest_for_phpstorm" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
