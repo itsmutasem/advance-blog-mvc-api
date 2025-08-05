@@ -12,5 +12,9 @@ class AuthApiController extends Controller
     {
         $credentials = $request->only('email', 'password');
         $token = auth('api')->attempt($credentials);
+        if (!$token)
+        {
+            return response(['message' => 'Unauthorized access!'], 401);
+        }
     }
 }
