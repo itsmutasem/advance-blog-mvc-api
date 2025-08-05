@@ -11,5 +11,6 @@ class AuthApiController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = $request->only('email', 'password');
+        $token = auth('api')->attempt($credentials);
     }
 }
