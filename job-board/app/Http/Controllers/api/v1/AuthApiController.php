@@ -14,9 +14,9 @@ class AuthApiController extends Controller
         $token = auth('api')->attempt($credentials);
         if (!$token)
         {
-            return response(['message' => 'Unauthorized access!'], 401);
+            return response()->json(['message' => 'Unauthorized access!'], 401);
         }
-        return response([
+        return response()->json([
             'access_token' => $token,
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
