@@ -24,16 +24,17 @@ class AuthApiController extends Controller
 
     public function refresh()
     {
-        
+
     }
 
     public function me()
     {
-        
+        $user = auth('api')->user();
+        return response()->json($user);
     }
 
     public function logout()
     {
-        
+
     }
 }
