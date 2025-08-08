@@ -24,7 +24,11 @@ class AuthApiController extends Controller
 
     public function refresh()
     {
-
+        $refreshedToken = auth('api')->refresh();
+        return response()->json([
+            'refresh_token' => $refreshedToken,
+            'expires_in' => auth('api')->factory()->getTTL() * 60
+        ]);
     }
 
     public function me()
