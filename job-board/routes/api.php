@@ -5,7 +5,7 @@ use App\Http\Controllers\api\v1\PostApiController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
-        Route::apiResource('post', PostApiController::class);
+        Route::apiResource('post', PostApiController::class)->middleware('auth:api');
         Route::prefix('auth')->group(function () {
             Route::post('login', [AuthApiController::class, 'login']);
             Route::middleware('auth:api')->group( function () {
