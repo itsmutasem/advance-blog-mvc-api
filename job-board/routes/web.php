@@ -28,7 +28,14 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Protected Routes
 Route::middleware('auth')->group(function () {
-    Route::resource('blog', PostController::class);
+    Route::get('blog', [PostController::class, 'index']);
+    Route::get('blog/create', [PostController::class, 'create']);
+    Route::post('blog', [PostController::class, 'store']);
+    Route::get('blog/{id}', [PostController::class, 'show']);
+    Route::get('blog/{id}/edit', [PostController::class, 'edit']);
+    Route::put('blog/{id}', [PostController::class, 'update']);
+    Route::delete('blog/{id}', [PostController::class, 'destroy']);
+    
     Route::resource('comments', CommentController::class);
 });
 
