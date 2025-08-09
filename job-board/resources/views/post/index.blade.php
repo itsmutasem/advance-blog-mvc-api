@@ -39,7 +39,7 @@
                         <p class="text-1xl text-gray-600">{{ $post->author }}</p>
                     </div>
                     <div class="flex items-center gap-x-4 mt-4">
-                        @if($userRole == 'admin' || $userRole == 'editor')
+                        @if(in_array($userRole, ['admin', 'editor']))
                         <a href="/blog/{{ $post->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
                         @endif
                         @if($userRole == 'admin')
