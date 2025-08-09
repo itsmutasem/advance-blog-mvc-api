@@ -29,6 +29,13 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Protected Routes
 Route::middleware('auth')->group(function () {
 
+    // Admin
+    Route::middleware('role:admin')->group(function () {
+        Route::get('blog/create', [PostController::class, 'create']);
+        Route::post('blog', [PostController::class, 'store']);
+        Route::delete('blog/{id}', [PostController::class, 'destroy']);
+    });
+
     // Viewer, Editor, Admin
     Route::middleware('role:viewer,editor,admin')->group(function () {
         Route::get('blog', [PostController::class, 'index']);
@@ -41,14 +48,6 @@ Route::middleware('auth')->group(function () {
         Route::get('blog/{id}/edit', [PostController::class, 'edit']);
         Route::put('blog/{id}', [PostController::class, 'update']);
     });
-
-    // Admin
-    Route::middleware('role:admin')->group(function () {
-        Route::get('blog/create', [PostController::class, 'create']);
-        Route::post('blog', [PostController::class, 'store']);
-        Route::delete('blog/{id}', [PostController::class, 'destroy']);
-    });
-
 });
 
 Route::middleware('onlyMe')->group(function () {
