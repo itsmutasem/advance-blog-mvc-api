@@ -36,7 +36,9 @@
                         <p class="text-1xl text-gray-600">{{ $post->author }}</p>
                     </div>
                     <div class="flex items-center gap-x-4 mt-4">
+                        @if(auth()->user()->role == 'admin' || auth()->user()->role == 'editor')
                         <a href="/blog/{{ $post->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
+                        @endif
                         @if(auth()->user()->role == 'admin')
                             <form method="POST" action="/blog/{{ $post->id }}" onsubmit="return confirm('Are you sure, this cannot be reversed?')">
                                 @csrf
