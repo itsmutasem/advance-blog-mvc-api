@@ -1,4 +1,7 @@
 <x-layout :title="$pageTitle">
+    @php
+        $userRole = auth()->user()->role;
+    @endphp
     @if(session('store'))
         <div class="flex items-center bg-green-100 border border-green-300 text-green-800 text-sm rounded-md px-4 py-3 mb-4" role="alert">
             <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -21,7 +24,7 @@
             <span class="font-medium">Deleted:</span> <span class="ml-1">{{ session('delete') }}</span>
         </div>
     @endif
-    @if(auth()->user()->role == 'admin')
+    @if($userRole == 'admin')
         <div class="mt-6 flex items-center justify-end gap-x-6">
         <a href="/blog/create" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
             Create
@@ -36,10 +39,10 @@
                         <p class="text-1xl text-gray-600">{{ $post->author }}</p>
                     </div>
                     <div class="flex items-center gap-x-4 mt-4">
-                        @if(auth()->user()->role == 'admin' || auth()->user()->role == 'editor')
+                        @if($userRole == 'admin' || $userRole == 'editor')
                         <a href="/blog/{{ $post->id }}/edit" class="text-blue-500 hover:text-gray-500">Edit</a>
                         @endif
-                        @if(auth()->user()->role == 'admin')
+                        @if($userRole == 'admin')
                             <form method="POST" action="/blog/{{ $post->id }}" onsubmit="return confirm('Are you sure, this cannot be reversed?')">
                                 @csrf
                                 @method('DELETE')
