@@ -1,7 +1,7 @@
 <x-layout :title="$pageTitle">
     <div>
         <p>{{ $post->body }}</p>
-        <h2 class="text-base font-semibold text-gray-900">Author: {{ $post->author }}</h2>
+        <h2 class="text-base font-semibold text-gray-900">Author: {{ $post->user->name }}</h2>
     </div>
     <div>
         <div class="px-4 sm:px-0 mt-5">
