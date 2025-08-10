@@ -15,7 +15,6 @@ class BlogPostRequest extends FormRequest
     {
         return [
             'title' => "bail|required|unique:post,title,{$this->input('id')}",
-            'author' => 'required',
             'body' => 'required'
         ];
     }
@@ -24,7 +23,6 @@ class BlogPostRequest extends FormRequest
     {
         return [
             'title.required' => 'Mandatory field',
-            'author.required' => 'Mandatory field',
             'body.required' => 'Mandatory field'
         ];
     }
