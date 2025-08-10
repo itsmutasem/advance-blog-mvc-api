@@ -48,7 +48,6 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->title = $request->input('title');
-        $post->author = $request->input('author');
         $post->body = $request->input('body');
         $post->published = $request->has('published');
 
