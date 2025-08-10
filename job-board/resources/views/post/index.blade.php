@@ -36,7 +36,7 @@
                 <div class="flex justify-between items-center">
                     <div>
                         <a href="/blog/{{ $post->id }}"><h2 class="text-2xl">{{ $post->title }}</h2></a>
-                        <p class="text-1xl text-gray-600">{{ $post->author }}</p>
+                        <p class="text-1xl text-gray-600">{{ $post->user->name }}</p>
                     </div>
                     <div class="flex items-center gap-x-4 mt-4">
                         @if(in_array($userRole, ['admin', 'editor']))
