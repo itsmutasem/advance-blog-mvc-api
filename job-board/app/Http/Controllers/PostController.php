@@ -23,9 +23,9 @@ class PostController extends Controller
     {
         $post = new Post();
         $post->title = $request->input('title');
-        $post->author = $request->input('author');
         $post->body = $request->input('body');
         $post->published = $request->has('published');
+        $post->user_id = auth()->id();
 
         $post->save();
 
