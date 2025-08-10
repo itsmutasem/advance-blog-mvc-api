@@ -31,8 +31,6 @@ Route::middleware('auth')->group(function () {
 
     // Admin
     Route::middleware('role:admin')->group(function () {
-        Route::get('blog/create', [PostController::class, 'create']);
-        Route::post('blog', [PostController::class, 'store']);
         Route::delete('blog/{id}', [PostController::class, 'destroy']);
     });
 
@@ -45,6 +43,8 @@ Route::middleware('auth')->group(function () {
 
     // Editor, Admin
     Route::middleware('role:editor,admin')->group(function () {
+        Route::get('blog/create', [PostController::class, 'create']);
+        Route::post('blog', [PostController::class, 'store']);
         Route::get('blog/{id}/edit', [PostController::class, 'edit']);
         Route::put('blog/{id}', [PostController::class, 'update']);
     });
