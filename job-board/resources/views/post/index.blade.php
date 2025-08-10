@@ -23,6 +23,13 @@
             </svg>
             <span class="font-medium">Deleted:</span> <span class="ml-1">{{ session('delete') }}</span>
         </div>
+    @elseif(session('unauthorized-update'))
+        <div class="flex items-center bg-yellow-100 border border-yellow-300 text-yellow-800 text-sm rounded-md px-4 py-3 mb-4" role="alert">
+            <svg class="w-5 h-5 mr-2 text-yellow-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 20h.01M12 4v12" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="font-medium">Unauthorized:</span> <span class="ml-1">{{ session('unauthorized-update') }}</span>
+        </div>
     @endif
     @if(in_array($userRole, ['admin', 'editor']))
         <div class="mt-6 flex items-center justify-end gap-x-6">

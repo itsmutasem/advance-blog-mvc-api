@@ -41,12 +41,18 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::findOrFail($id);
+        if ($post->user_id !== auth()->id()) {
+            return redirect('/blog')->with('unauthorized-update', 'You can not edit posts that are not created by you!');
+        }
         return view('post.edit', ['post' => $post ,'pageTitle' => 'Blog - Edit Post: ' . $post->title]);
     }
 
     public function update(BlogPostRequest $request, string $id)
     {
         $post = Post::findOrFail($id);
+        if ($post->user_id !== auth()->id()) {
+            return redirect('/blog')->with('unauthorized-update', 'You can not edit posts that are not created by you!');
+        }
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->published = $request->has('published');
