@@ -16,9 +16,13 @@ class Post extends Model
     public $incrementing = false;
     protected $table = 'post';
 //    use HasFactory;
-    protected $fillable = ['title', 'body', 'author', 'published']; // fields that can be updated
+    protected $fillable = ['title', 'body', 'author', 'published', 'user_id']; // fields that can be updated
     protected $guarded = ['id']; // cannot be updated/assigned (read only)
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function comments()
     {
         return $this->hasMany(Comment::class);
