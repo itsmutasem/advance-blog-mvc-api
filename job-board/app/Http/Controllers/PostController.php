@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BlogPostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
@@ -41,9 +42,7 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::findOrFail($id);
-        if ($post->user_id !== auth()->id()) {
-            return redirect('/blog')->with('unauthorized-update', 'You can not edit posts that are not created by you!');
-        }
+        Gate::authorize('update', $post);
         return view('post.edit', ['post' => $post ,'pageTitle' => 'Blog - Edit Post: ' . $post->title]);
     }
 
