@@ -39,17 +39,13 @@ class PostController extends Controller
         return view('post.show', ['post' => $post, 'pageTitle' => $post->title]);
     }
 
-    public function edit(string $id)
+    public function edit(Post $post)
     {
-        $post = Post::findOrFail($id);
-//        Gate::authorize('update', $post);
         return view('post.edit', ['post' => $post ,'pageTitle' => 'Blog - Edit Post: ' . $post->title]);
     }
 
-    public function update(BlogPostRequest $request, string $id)
+    public function update(BlogPostRequest $request, Post $post)
     {
-        $post = Post::findOrFail($id);
-//        Gate::authorize('update', $post);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->published = $request->has('published');
