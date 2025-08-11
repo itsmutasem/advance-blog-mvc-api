@@ -38,8 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::middleware('role:editor,admin')->group(function () {
         Route::get('blog/create', [PostController::class, 'create']);
         Route::post('blog', [PostController::class, 'store']);
-        Route::get('blog/{post}/edit', [PostController::class, 'edit'])->can('update', 'post');
-        Route::put('blog/{post}', [PostController::class, 'update'])->can('update', 'post');
+        Route::middleware('can:update,post')->group(function () {
+            Route::get('blog/{post}/edit', [PostController::class, 'edit']);
+            Route::put('blog/{post}', [PostController::class, 'update']);
+        });
     });
 
     // Viewer, Editor, Admin
