@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
 
     // Admin
     Route::middleware('role:admin')->group(function () {
-        Route::delete('blog/{id}', [PostController::class, 'destroy']);
+        Route::delete('blog/{post}', [PostController::class, 'destroy']);
     });
 
     // Editor, Admin
@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
     // Viewer, Editor, Admin
     Route::middleware('role:viewer,editor,admin')->group(function () {
         Route::get('blog', [PostController::class, 'index']);
-        Route::get('blog/{id}', [PostController::class, 'show']);
+        Route::get('blog/{post}', [PostController::class, 'show']);
         Route::resource('comments', CommentController::class);
     });
 });

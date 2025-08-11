@@ -33,9 +33,8 @@ class PostController extends Controller
         return redirect('/blog')->with('store', 'Post created successfully!');
     }
 
-    public function show(string $id)
+    public function show(Post $post)
     {
-        $post = Post::findOrFail($id);
         return view('post.show', ['post' => $post, 'pageTitle' => $post->title]);
     }
 
@@ -54,9 +53,8 @@ class PostController extends Controller
         return redirect('/blog')->with('update', 'Post updated successfully!');
     }
 
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-        $post = Post::findOrFail($id);
         $post->delete();
         return redirect('/blog')->with('delete', 'Post deleted successfully!');
     }
